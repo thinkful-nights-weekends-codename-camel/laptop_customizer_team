@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
 export default class IndividualSpecs extends Component {
-  Object.keys(props.map(key => {
+  const features = Object.keys(this.props.features).map(key => {
     const options = props.features[key].map((item, index) => {
       const selectedClass = item.name === props.selected[key].name ? 'feature__selected' : '';
       const featureClass = 'feature__option ' + selectedClass;
     })
-  }))
+  })
+
   render() {
     
     return (
