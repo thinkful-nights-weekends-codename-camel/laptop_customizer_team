@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
-// import './App.css';
+import './App.css';
 import IndividualSpecs from './IndividualSpecs/IndividualSpecs.js';
 import PriceBreakdown from './PriceBreakdown/PriceBreakdown.js';
 
-class App extends Component {
+export default class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      selected: {  }
+      selected: {
+        Processor: {
+            name: '17th Generation Intel Core HB (7 Core with donut spare)',
+            cost: 700
+          },
+        "Operating System": {
+            name: 'Bodhi Linux',
+            cost: 300
+          },
+        "Video Card":{
+            name: 'Toyota Corolla 1.5v',
+            cost: 1150.98
+          },
+        Display: {
+            name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
+            cost: 1500
+          }
       }
     }
+  }
 
   updateFeature(feature, newValue) {
     const selected = Object.assign({}, this.props.selected);
@@ -30,11 +47,14 @@ class App extends Component {
         <main>
           <section className="main__form">
             <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
-            <IndividualSpecs  compFeatures={this.props.features}/>
+            features={this.props.features}
+            
+            <IndividualSpecs 
+            PriceBreakdown summary={this.props.features}/>
           </section>
         </main>
       </div>
     )} 
 }
 
-export default App;  
+
