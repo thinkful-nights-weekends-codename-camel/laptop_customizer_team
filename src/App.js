@@ -3,6 +3,7 @@ import './App.css';
 import IndividualSpecs from './IndividualSpecs/IndividualSpecs.js';
 import PriceBreakdown from './PriceBreakdown/priceBreakdown.js';
 import Header from './header/header';
+// import SpecItems from './SpecItems/SpecItems';
 
 class App extends Component {
   constructor(props){
