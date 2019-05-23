@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class TechSpecs extends Component { 
+export default class IndividualSpecs extends Component { 
     render() {
         const features = Object.keys(this.props.features)
             .map(key => {

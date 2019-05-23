@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import IndividualSpecs from './IndividualSpecs/IndividualSpecs.js';
-import PriceBreakdown from './priceBreakdown/priceBreakdown.js';
+import PriceBreakdown from './PriceBreakdown/priceBreakdown.js';
 import Header from './header/header';
 
 class App extends Component {

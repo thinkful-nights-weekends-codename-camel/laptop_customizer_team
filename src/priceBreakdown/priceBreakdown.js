@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class LaptopSummary extends Component {
+export default class PriceBreakdown extends Component {
     render() {
         const summary = Object.keys(this.props.selected)
                 .map(key => <div className="summary__option" key={key}>
