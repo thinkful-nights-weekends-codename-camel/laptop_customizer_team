@@ -30,8 +30,8 @@ class App extends Component {
     }
   }
 
-  updateFeature = (feature, newValue) => {
-    const selected = Object.assign({}, this.state.selected);
+  updateFeature = (feature, newValue, selectedState) => {
+    const selected = Object.assign({}, selectedState);
     selected[feature] = newValue;
     this.setState({
       selected
@@ -46,7 +46,7 @@ class App extends Component {
           <IndividualSpecs 
             features={this.props.features}
             selected={this.state.selected}
-            onUpdateFeature={this.updateFeature}
+            onUpdateFeature={(feat,val) => this.updateFeature(feat,val, this.state.selected)}
 
           />   
           <PriceBreakdown 

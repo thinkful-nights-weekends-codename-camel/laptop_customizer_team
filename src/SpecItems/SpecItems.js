@@ -1,23 +1,25 @@
-import React from 'react';
-// import IndividualSpecs from './IndividualSpecs/IndividualSpecs';
+import React, { Component } from 'react';
 
-export default class SpecItems extends React.Component {
+
+export default class SpecItems extends Component {
+    static defaultProps = {
+        index: 0,
+        feature: 0,
+        value: 0,
+        item: 0,
+    }
   render() {
-    return 
-        const options = this.props.features[this.props.key].map((item, index) => {
-            const selectedClass = item.name === this.props.selected[this.props.key].name ? 'feature__selected' : '';
-            const featureClass = 'feature__option ' + selectedClass;
         return (
-            <li key={index} className="feature__item">
+            <li className="feature__item">
                 <div 
-                    className={featureClass}
-                    onClick={e => this.props.onUpdateFeature(this.props.key, item)}>
-                    { item.name }
+                    className={this.props.featureClass}
+                    onClick={ e => this.props.onUpdateFeature(this.props.feature, this.props.item)}>
+                    { this.props.item.name }
                     ({ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'})
-                        .format(item.cost) })
+                        .format(this.props.item.cost) })
                 </div>
             </li>
-        )
-    });
+    );
   }
 }
+
